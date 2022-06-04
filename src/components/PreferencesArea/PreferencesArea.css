@@ -1,0 +1,12 @@
+.sizeBackground{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+textarea{
+    width: 90%;
+}
+.preferencesArea{
+    padding: 2vh 3vh;
+
+}

@@ -5,7 +5,6 @@ const ImageData = (url, width, height, posX = 0, posY = 0) => {
         url,
         width,
         height,
-
         posX,
         posY
     })

@@ -16,10 +16,10 @@ export default function PreferencesArea() {
     const [imageURl, setImageURL] = React.useState('');
 
     const [fileInput, setFileInput] = React.useState(null);
-    // React.useEffect(() => {
-    //         dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 150, 150]))
-    //     }, []
-    // )
+    React.useEffect(() => {
+            dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 150, 150]))
+        }, []
+    )
 
     function previewFile() {
         // var preview = imgInputRef.current;

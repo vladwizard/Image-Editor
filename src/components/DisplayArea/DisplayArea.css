@@ -9,8 +9,8 @@
 }
 .container{
     position: absolute;
-    height: 5px;
-    width: 5px;
+    height: 0;
+    width: 0;
     /*opacity: 1;*/
 }
 .active{
@@ -19,5 +19,12 @@
 .pos_button{
     z-index: 12;
     position: relative;
+
+}
+.input_range{
+    position: relative;
+    /*height: 30px;*/
+    /*width: 150px;*/
+    transform: rotate(-90deg)
 
 }

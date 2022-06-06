@@ -2,7 +2,7 @@ import React from "react";
 import style from './PreferencesArea.css'
 import s from '../../assets/background.png'
 import {useSelector, useDispatch} from 'react-redux'
-import {setImage, setBackground} from '../../Redux/slices/imagesDataSlice'
+import {setText, setImage, setBackground} from '../../Redux/slices/imagesDataSlice'
 
 export default function PreferencesArea() {
 
@@ -18,8 +18,11 @@ export default function PreferencesArea() {
     const [fileInput, setFileInput] = React.useState(null);
     React.useEffect(() => {
             dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
+            //  dispatch(setText('123123123123213'));
+            console.log(123123)
         }, []
     )
+    const [insertText, setInsertText] = React.useState('');
 
     function previewFile() {
         // var preview = imgInputRef.current;
@@ -63,7 +66,7 @@ export default function PreferencesArea() {
                           onChange={(e) => {
                               setImageURL(e.target.value);
                           }}/>
-                <button  onClick={() => {
+                <button onClick={() => {
 
 
                     let img = new Image();
@@ -77,19 +80,17 @@ export default function PreferencesArea() {
                 </button>
             </div>
             <div>
-            <label>Вставить файлом</label>
-            <input type="file" onChange={previewFile}></input>
+                <label>Вставить файлом</label>
+                <input type="file" onChange={previewFile}></input>
             </div>
-            {/*<br/>*/}
-            {/*<img src="" height="200" alt="Image preview..." ref={imgInputRef}/>*/}
+            <div>
 
-            {/*<button onClick={() => {*/}
-
-
-            {/*    console.log()*/}
-            {/*}}>WATCH img*/}
-            {/*</button>*/}
-            {/*<button onClick={()=>{{console.log(window.URL.createObjectURL(fileInput.current.files[0]),123)}}}>123 </button>*/}
+                <button onClick={() => {
+                    dispatch(setText("123123"));
+                }}>Вставить текст
+                </button>
+                <input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>
+            </div>
 
 
         </div>

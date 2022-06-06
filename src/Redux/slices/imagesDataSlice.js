@@ -5,8 +5,6 @@ const ImageData = (url, width, height, posX = 0, posY = 0) => {
         url,
         width,
         height,
-        posX,
-        posY
     })
 }
 
@@ -14,6 +12,7 @@ const initialState = {
     backgroundHeight: 500,
     backgroundWidth: 700,
     items: [],
+    texts: [],
     overflowHiden: false,
 }
 
@@ -53,11 +52,14 @@ export const imagesDataSlice = createSlice({
         setBackground: (state, action) => {
             state.backgroundHeight = action.payload[0];
             state.backgroundWidth = action.payload[1];
+        },
+        setText: (state, action) => {
+            state.texts.push(new ImageData(action.payload,150.15));
         }
     },
 })
 
 
-export const {setImage, setBackground} = imagesDataSlice.actions
+export const {setImage, setBackground, setText} = imagesDataSlice.actions
 
 export default imagesDataSlice.reducer

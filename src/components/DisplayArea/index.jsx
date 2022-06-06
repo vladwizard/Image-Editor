@@ -33,8 +33,12 @@ export default function DisplayArea() {
     const [rangeValue, setRangeValue] = React.useState(1);
     const choosenRef = useRef();
     const rangeRef = useRef();
-    let containerRef = React.useRef();
 
+
+    const [choosenWidth, setChoosenWidth] = React.useState(0);
+    const [choosenHeight, setChoosenHeight] = React.useState(0);
+    const buttons = [0, 1, 2, 3, 4, 5, 6, 7];
+    const buttomIndent = 50;
     return (
         <div className='displayArea'
              onClick={(e) => {
@@ -62,14 +66,18 @@ export default function DisplayArea() {
                          style={{
                              'height': item.height + 'px',
                              'width': item.width + 'px',
+                             // 'left': backgroundWidth / 2 + 'px',
+                             // 'top': backgroundHeight / 2 + 'px',
                              'left': backgroundWidth / 2 + 'px',
-                             'top': backgroundHeight / 2  + 'px',
+                             'top': backgroundHeight / 2 + 'px',
                          }}
                          onMouseDown={(e) => {
                              console.log(e.target.parentElement)
                              setShowPreferens(false);
 
                              setChoosen(index);
+                             setChoosenWidth(parseInt(e.target.style.width));
+                             setChoosenHeight(parseInt(e.target.style.height));
                              setHolden(index);
 
                              document.onmousemove = function (ev) {
@@ -95,29 +103,77 @@ export default function DisplayArea() {
                 )}
 
             </div>
-            {showPreferens ? (
+            {showPreferens == true ? (
 
-                <input type='range' className='input_range' ref={rangeRef} min={0.1} max={2} step={0.02}
-                       value={rangeValue}
-                       style={{
-                           'height': '30px',
-                           'width': '150px',
-                           'left': parseInt(choosenRef.current.style.left) + parseInt(backgroundRef.current.style.left) - parseInt(backgroundRef.current.style.width) / 2 - 75 + 'px',
-                           'top': parseInt(choosenRef.current.style.top) + parseInt(backgroundRef.current.style.top) - parseInt(backgroundRef.current.style.height) / 2 - 15 + 'px',
-                       }}
+                // <input type='range' className='input_range' ref={rangeRef} min={0.1} max={2} step={0.02}
+                //        value={rangeValue}
+                //        style={{
+                //            'height': '30px',
+                //            'width': '150px',
+                //            'left': parseInt(choosenRef.current.style.left) + parseInt(backgroundRef.current.style.left) - parseInt(backgroundRef.current.style.width) / 2 - 75 + 'px',
+                //            'top': parseInt(choosenRef.current.style.top) + parseInt(backgroundRef.current.style.top) - parseInt(backgroundRef.current.style.height) / 2 - 15 + 'px',
+                //        }}
+                //
+                //        onClick={(e) => {
+                //            // console.log("я третий")
+                //            e.stopPropagation();
+                //        }}
+                //        onChange={(e) => {
+                //
+                //            setRangeValue(e.target.value);
+                //            choosenRef.current.style.width = images[choosen].width * e.target.value + 'px';
+                //            choosenRef.current.style.height = images[choosen].height * e.target.value + 'px';
+                //
+                //        }}
+                // />
 
-                       onClick={(e) => {
-                           // console.log("я третий")
-                           e.stopPropagation();
-                       }}
-                       onChange={(e) => {
+                [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]].map((item) =>
+                    <button
 
-                           setRangeValue(e.target.value);
-                           choosenRef.current.style.width = images[choosen].width * e.target.value + 'px';
-                           choosenRef.current.style.height = images[choosen].height * e.target.value + 'px';
+                        style={(Math.abs(item[0]) == 1 && Math.abs(item[1]) == 1) ?
+                            {
+                                'width': buttomIndent + (choosenWidth / 4) * Math.abs(item[1]) / 2 + 'px',
+                                'height': buttomIndent + (choosenWidth / 4) * Math.abs(item[1]) / 2 + 'px',
 
-                       }}
-                />
+                                'left': parseInt(choosenRef.current.style.left) + parseInt(backgroundRef.current.style.left) - parseInt(backgroundRef.current.style.width) / 2 + (choosenWidth / 2 + buttomIndent / 2) * item[0] + 'px',
+                                'top': parseInt(choosenRef.current.style.top) + parseInt(backgroundRef.current.style.top) - parseInt(backgroundRef.current.style.height) / 2 + (choosenHeight / 2 + buttomIndent / 2) * item[1] + 'px',
+                            }
+                            :
+                            {
+                                'width': buttomIndent * 2 + (choosenWidth / 2 + buttomIndent) * Math.abs(item[1]) + 'px',
+                                'height': buttomIndent * 2 + (choosenHeight / 2 + buttomIndent) * Math.abs(item[0]) + 'px',
+
+                                'left': parseInt(choosenRef.current.style.left) + parseInt(backgroundRef.current.style.left) - parseInt(backgroundRef.current.style.width) / 2 + (choosenWidth / 2 + buttomIndent / 2) * item[0] + 'px',
+                                'top': parseInt(choosenRef.current.style.top) + parseInt(backgroundRef.current.style.top) - parseInt(backgroundRef.current.style.height) / 2 + (choosenHeight / 2 + buttomIndent / 2) * item[1] + 'px',
+                            }
+                        }
+                        onClick={(e) => {
+                            e.stopPropagation();
+                        }}
+                        onMouseDown={(e) => {
+                            document.onmousemove = function (ev) {
+                                let transfrormX = ev.movementX * 4;
+                                let transfrormY = ev.movementY * 4;
+
+                                // e.target.style.width = buttomIndent * 2 + (choosenWidth / 2 + buttomIndent) * Math.abs(item[1]) + 'px';
+                                // e.target.style.height = buttomIndent * 2 + (choosenHeight / 2 + buttomIndent) * Math.abs(item[0]) + 'px';
+                                // e.target.style.left = parseInt(choosenRef.current.style.left) + parseInt(backgroundRef.current.style.left) - parseInt(backgroundRef.current.style.width) / 2 + (choosenWidth / 2 + buttomIndent / 2) * item[0] + 'px';
+                                // e.target.style.top = parseInt(choosenRef.current.style.top) + parseInt(backgroundRef.current.style.top) - parseInt(backgroundRef.current.style.height) / 2 + (choosenHeight / 2 + buttomIndent / 2) * item[1] + 'px';
+
+                                choosenRef.current.style.width = parseInt(choosenRef.current.style.width) + transfrormX * item[0] + 'px'
+                                choosenRef.current.style.height = parseInt(choosenRef.current.style.height) + transfrormY * item[1] + 'px'
+
+                                setChoosenWidth(parseInt( choosenRef.current.style.width));
+                                setChoosenHeight(parseInt(choosenRef.current.style.height));
+                            }
+                        }}
+
+                        onMouseUp={(e) => {
+                            document.onmousemove = null;
+                        }}
+
+                    />
+                )
             ) : ''}
         </div>
     )

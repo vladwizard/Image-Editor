@@ -39,9 +39,13 @@ img{
     transform: rotate(-90deg)
 
 }
-button{
+.displayArea button{
     position: absolute;
+    opacity: 0.7;
+    background: lightgray;
     pointer-events: all;
+    transform: translate(-50%,-50%);
+    border: none;
 }
 .displayArea{
     pointer-events: stroke;

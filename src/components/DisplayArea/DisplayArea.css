@@ -4,17 +4,9 @@
     transform: translate(-50%,-50%);
     /*overflow: hidden;*/
 }
-.container *{
-    position: relative;
-    /*pointer-events: none;*/
-    transform: translate(-50%,-50%);
-    pointer-events: all;
 
-}
 img{
-    position: relative;
-
-    transform: translate(-50%,-50%);
+    position: absolute;
     pointer-events: all;
 
 }
@@ -43,7 +35,7 @@ img{
     position: absolute;
     opacity: 0.7;
     background: lightgray;
-    pointer-events: all;
+    /*pointer-events: ;*/
     transform: translate(-50%,-50%);
     border: none;
 }

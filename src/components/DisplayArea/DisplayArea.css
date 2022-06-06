@@ -4,17 +4,23 @@
     transform: translate(-50%,-50%);
     /*overflow: hidden;*/
 }
-.image{
+.container *{
     position: relative;
     /*pointer-events: none;*/
     transform: translate(-50%,-50%);
     pointer-events: all;
+
+}
+img{
+    position: relative;
+
+    transform: translate(-50%,-50%);
+    pointer-events: all;
+
 }
 .container{
-    /*background: gold;*/
     position: absolute;
     pointer-events: none;
-
     transform: translate(-50%,-50%);
 
 }
@@ -26,13 +32,16 @@
     position: relative;
 
 }
-.input_range{
+.input_range {
 
     position: absolute;
-    /*height: 30px;*/
-    /*width: 150px;*/
+
     transform: rotate(-90deg)
 
+}
+button{
+    position: absolute;
+    pointer-events: all;
 }
 .displayArea{
     pointer-events: stroke;

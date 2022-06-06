@@ -23,10 +23,14 @@ textarea{
 
     padding: 0;
     margin: 0;
+
+
 }
 
 .preferencesArea * button{
     border: solid black 0.1vh;
+    padding: 0.5vh 1vh;
+    margin-bottom:5vh;
 }
 
 
@@ -37,4 +41,11 @@ input[type=file]::file-selector-button {
 }
 .urlArea button{
     padding: 0.5vh 1vh;
+display: block;
+}
+.urlArea{
+    height: 30vh;
+}
+.preferencesArea div{
+    margin-bottom: 2vh;
 }

@@ -11,8 +11,8 @@ const ImageData = (url, width, height, posX = 0, posY = 0) => {
 }
 
 const initialState = {
-    backgroundHeight: 300,
-    backgroundWidth: 300,
+    backgroundHeight: 500,
+    backgroundWidth: 700,
     items: [],
     overflowHiden: false,
 }
@@ -33,19 +33,18 @@ export const imagesDataSlice = createSlice({
             let width = action.payload[1];
             let height = action.payload[2];
 
-            let prop = width/height;
-
-            // console.log(width);
-            // console.log(height);
-
-            if(height>width){
-                height = state.backgroundHeight;
-                width = height * prop;
-            }
-            else{
-                width = state.backgroundWidth;
-                height = width / prop;
-            }
+            // let prop = width/height;
+            //
+            //
+            // if(height>width){
+            //     height = state.backgroundHeight;
+            //     width = height * prop;
+            // }
+            // else{
+            //     width = state.backgroundWidth;
+            //     height = width / prop;
+            // }
+            //
             // console.log(width);
             // console.log(height);
 

@@ -1,17 +1,22 @@
 .background{
     background: white;
     position: absolute;
+    transform: translate(-50%,-50%);
     /*overflow: hidden;*/
 }
 .image{
     position: relative;
-
+    /*pointer-events: none;*/
+    transform: translate(-50%,-50%);
+    pointer-events: all;
 }
 .container{
+    /*background: gold;*/
     position: absolute;
-    height: 0;
-    width: 0;
-    /*opacity: 1;*/
+    pointer-events: none;
+
+    transform: translate(-50%,-50%);
+
 }
 .active{
     opacity: 0.5;
@@ -22,9 +27,13 @@
 
 }
 .input_range{
-    position: relative;
+
+    position: absolute;
     /*height: 30px;*/
     /*width: 150px;*/
     transform: rotate(-90deg)
 
+}
+.displayArea{
+    pointer-events: stroke;
 }

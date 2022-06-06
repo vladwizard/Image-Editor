@@ -17,7 +17,7 @@ export default function PreferencesArea() {
 
     const [fileInput, setFileInput] = React.useState(null);
     React.useEffect(() => {
-            dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 150, 150]))
+            dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
         }, []
     )
 
@@ -55,16 +55,16 @@ export default function PreferencesArea() {
                 <label>Ширина</label> <input type='text' value={backgroundWidth}
                                              onChange={(e) => dispatch(setBackground([backgroundHeight, e.target.value,]))}/>
             </div>
-            <br/>
+
             <div className='urlArea'>
-                <label>Вставить ссылкой</label><br/>
+                <label>Вставить ссылкой</label>
                 <textarea id="story" name="story" rows="7"
                           value={imageURl}
                           onChange={(e) => {
                               setImageURL(e.target.value);
                           }}/>
-                <button onClick={() => {
-                    var reader = new FileReader();
+                <button  onClick={() => {
+
 
                     let img = new Image();
                     img.src = imageURl;
@@ -76,10 +76,10 @@ export default function PreferencesArea() {
                 }}>Отправить
                 </button>
             </div>
-            <br/>
-            <br/>
-            <label>Вставить файлом</label><br/>
+            <div>
+            <label>Вставить файлом</label>
             <input type="file" onChange={previewFile}></input>
+            </div>
             {/*<br/>*/}
             {/*<img src="" height="200" alt="Image preview..." ref={imgInputRef}/>*/}
 

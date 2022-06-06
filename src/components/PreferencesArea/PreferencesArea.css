@@ -1,15 +1,40 @@
 .sizeBackground{
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 70%;
+    height: 4vh;
 }
 .sizeBackground input{
-    width: 80px;
+    width: 30%;
+    border: solid black 0.1vh;
+    padding-left: 0.5vh;
 }
 textarea{
+    margin-top: 1vh;
     width: 90%;
+    border: solid black 0.1vh;
 }
 .preferencesArea{
     padding: 2vh 3vh;
+    z-index: 10000;
+}
+.preferencesArea *{
+    font-size: 2.5vh;
 
+    padding: 0;
+    margin: 0;
+}
+
+.preferencesArea * button{
+    border: solid black 0.1vh;
+}
+
+
+input[type=file]::file-selector-button {
+    padding: 1vh;
+    margin-right: 1vh;
+    border: solid black 0.1vh;
+}
+.urlArea button{
+    padding: 0.5vh 1vh;
 }

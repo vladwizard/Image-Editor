@@ -75,7 +75,7 @@ export default function PreferencesArea() {
                 <label>Высота</label> <input type='text' value={backgroundHeight}
                                              onChange={(e) => {
                                                  let height = e.target.value;
-                                                 if(proportion) dispatch(setBackgroundSize([(height/backgroundHeight) * backgroundWidth,height ]))
+                                                 if(proportion == true) dispatch(setBackgroundSize([Math.round(height/backgroundHeight) * backgroundWidth,height ]))
                                                  else dispatch(setBackgroundSize([backgroundWidth, height]))
                                              }}/>
             </div>
@@ -83,7 +83,7 @@ export default function PreferencesArea() {
                 <label>Ширина</label> <input type='text' value={backgroundWidth}
                                              onChange={(e) => {
                                                  let width = e.target.value;
-                                                 if(proportion) dispatch(setBackgroundSize([width,(width/backgroundWidth) * backgroundHeight ]))
+                                                 if(proportion == true) dispatch(setBackgroundSize([width,Math.round(width/backgroundWidth) * backgroundHeight ]))
                                                  else dispatch(setBackgroundSize([width, backgroundHeight]))
                                              }}/>
             </div>

@@ -20,7 +20,7 @@ img{
     align-items: center;
     justify-content: center;
     text-align: center;
-
+    white-space: pre-wrap;
     font-size: 23px;
 }
 .container{

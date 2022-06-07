@@ -2,7 +2,7 @@
     background: white;
     position: absolute;
     transform: translate(-50%,-50%);
-    /*overflow: hidden;*/
+
 }
 
 img{
@@ -79,7 +79,6 @@ img{
     background: white;
     opacity: 1;
 
-    background: white;
     border: none;
     resize:none;
     max-height: 550px;

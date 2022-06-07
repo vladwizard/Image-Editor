@@ -24,6 +24,20 @@ export default function DisplayArea() {
 
     const backgroundHeight = useSelector((state) => state.imagesData.backgroundHeight)
     const backgroundWidth = useSelector((state) => state.imagesData.backgroundWidth);
+    const backgroundImg = useSelector((state) => state.imagesData.backgroundImg);
+
+    useEffect(()=>{
+    if(backgroundImg!=0 && backgroundImg!=null) {
+        backgroundRef.current.style.background = 'url(' + backgroundImg + ')';
+        backgroundRef.current.style.backgroundSize= '100% 100%';
+    }
+    else
+        backgroundRef.current.style.background='white';
+
+    },[backgroundImg])
+
+
+
     const backgroundRef = React.useRef(null);
 
     let bodyWidth = document.documentElement.clientWidth;

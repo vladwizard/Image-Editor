@@ -49,3 +49,8 @@ display: block;
 .preferencesArea div{
     margin-bottom: 2vh;
 }
+input[type=checkbox]{
+    height: 3vh;
+    width: 3vh;
+
+}

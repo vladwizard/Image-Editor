@@ -2,32 +2,55 @@ import React from "react";
 import style from './PreferencesArea.css'
 import s from '../../assets/background.png'
 import {useSelector, useDispatch} from 'react-redux'
-import {setText, setImage, setBackground} from '../../Redux/slices/imagesDataSlice'
+import {setText, setImage, setBackgroundImage,setBackgroundSize} from '../../Redux/slices/imagesDataSlice'
 
 export default function PreferencesArea() {
 
     const backgroundHeight = useSelector((state) => state.imagesData.backgroundHeight)
     const backgroundWidth = useSelector((state) => state.imagesData.backgroundWidth);
+
     const images = useSelector((state) => state.imagesData.items);
     const dispatch = useDispatch()
-    const fileInputRef = React.createRef();
-    const imgInputRef = React.createRef();
+
+
 
     const [imageURl, setImageURL] = React.useState('');
 
     const [fileInput, setFileInput] = React.useState(null);
     React.useEffect(() => {
-           // dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
-            dispatch(setText('123123123123213'));
-            console.log(123123)
+            // dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
+            //dispatch(setText('123123123123213'));
         }, []
     )
     const [insertText, setInsertText] = React.useState('');
 
-    function previewFile() {
-        // var preview = imgInputRef.current;
-        var file = document.querySelector('input[type=file]').files[0];
-        var reader = new FileReader();
+    const backgroundInputRef = React.createRef();
+    function inputBackground() {
+        let file = backgroundInputRef.current.files[0];
+        let reader = new FileReader();
+
+        reader.onloadend = function () {
+
+            let img = new Image();
+            img.src = reader.result;
+            img.onload = function () {
+                dispatch(setBackgroundImage(reader.result));
+                dispatch(setBackgroundSize([this.width, this.height]));
+                setProportion(true)
+            }
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+
+    }
+
+
+    const imgInputRef = React.createRef();
+    function SetImage() {
+        let file = imgInputRef.current.files[0];
+        let reader = new FileReader();
 
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -35,7 +58,6 @@ export default function PreferencesArea() {
             let img = new Image();
             img.src = reader.result;
             img.onload = function () {
-                // console.log(img.src);
                 dispatch(setImage([reader.result, this.width, this.height]));
             }
         }
@@ -46,15 +68,44 @@ export default function PreferencesArea() {
 
     }
 
+    const [proportion,setProportion]=React.useState(false);
     return (
         <div className='preferencesArea'>
             <div className='sizeBackground'>
                 <label>Высота</label> <input type='text' value={backgroundHeight}
-                                             onChange={(e) => dispatch(setBackground([e.target.value, backgroundWidth]))}/>
+                                             onChange={(e) => {
+                                                 let height = e.target.value;
+                                                 if(proportion) dispatch(setBackgroundSize([(height/backgroundHeight) * backgroundWidth,height ]))
+                                                 else dispatch(setBackgroundSize([backgroundWidth, height]))
+                                             }}/>
             </div>
             <div className='sizeBackground'>
                 <label>Ширина</label> <input type='text' value={backgroundWidth}
-                                             onChange={(e) => dispatch(setBackground([backgroundHeight, e.target.value,]))}/>
+                                             onChange={(e) => {
+                                                 let width = e.target.value;
+                                                 if(proportion) dispatch(setBackgroundSize([width,(width/backgroundWidth) * backgroundHeight ]))
+                                                 else dispatch(setBackgroundSize([width, backgroundHeight]))
+                                             }}/>
+            </div>
+            <div>
+                <label>Сохранять пропорции</label>
+                <input type='checkbox' value={proportion} onChange={(e)=>setProportion(e.target.value)}/>
+            </div>
+
+            <div>
+                <button
+                onClick={(e)=>{
+                    dispatch(setBackgroundImage(null));
+                    backgroundInputRef.current.value = null;
+                }}
+                > Убрать фон</button>
+
+            </div>
+            <div>
+                <label>Вставить фон файлом</label>
+                <input type="file" onChange={inputBackground} ref={backgroundInputRef}>
+
+                </input>
             </div>
 
             <div className='urlArea'>
@@ -79,7 +130,7 @@ export default function PreferencesArea() {
             </div>
             <div>
                 <label>Вставить файлом</label>
-                <input type="file" onChange={previewFile}></input>
+                <input type="file" onChange={SetImage} ref={imgInputRef}></input>
             </div>
             <div>
 

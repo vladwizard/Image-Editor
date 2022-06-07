@@ -7,16 +7,16 @@ const Data = (str, width, height, posX = 0, posY = 0) => {
         height,
     })
 }
-const textData = (str, width, height, fontSize=32 , i)=> {
+const textData = (str, width, height, fontSize = 32, i) => {
     return ({
         str,
         width,
         height,
-        startWidth:width,
-        startHeight:height,
-        FontSize:32,
-        n:1,
-        longest:str.length,
+        startWidth: width,
+        startHeight: height,
+        FontSize: 32,
+        n: 1,
+        longest: str.length,
         i
     })
 }
@@ -24,11 +24,12 @@ const textData = (str, width, height, fontSize=32 , i)=> {
 let initialState = {
     backgroundHeight: 500,
     backgroundWidth: 700,
+    backgroundImg: 0,
     items: [],
     texts: [],
-    text:null,
+    text: null,
     overflowHiden: false,
-    iText:0,
+    iText: 0,
 }
 
 
@@ -64,14 +65,18 @@ export const imagesDataSlice = createSlice({
 
             state.items.push(new Data(action.payload[0], width, height));
         },
-        setBackground: (state, action) => {
-            state.backgroundHeight = action.payload[0];
-            state.backgroundWidth = action.payload[1];
+        setBackgroundImage: (state, action) => {
+            state.backgroundImg = action.payload;
+        },
+
+        setBackgroundSize: (state, action) => {
+            state.backgroundWidth = action.payload[0];
+            state.backgroundHeight = action.payload[1];
         },
         setText: (state, action) => {
             let fs = 32;
             let str = action.payload;
-            state.text = new textData(str,str.length*fs/1.5,fs*2,0,  state.iText++);
+            state.text = new textData(str, str.length * fs / 1.5, fs * 2, 0, state.iText++);
         },
         // changeText: (state, action) => {
         //     let str = action.payload[0];
@@ -83,6 +88,6 @@ export const imagesDataSlice = createSlice({
 })
 
 
-export const {setImage, setBackground, setText, changeText} = imagesDataSlice.actions
+export const {setImage, setBackgroundSize, setBackgroundImage, setText, changeText} = imagesDataSlice.actions
 
 export default imagesDataSlice.reducer

@@ -10,6 +10,19 @@ img{
     pointer-events: all;
 
 }
+.background *{
+    position: absolute;
+
+}
+.background div{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 23px;
+}
 .container{
     position: absolute;
     pointer-events: none;
@@ -41,4 +54,39 @@ img{
 }
 .displayArea{
     pointer-events: stroke;
+    overflow: hidden;
+}
+.textInput{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.25) ;
+
+    z-index: 20000;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.textInput * {
+    word-break: break-all;
+
+    width: 1050px;
+    text-align:center;
+    font-size: 75px;
+    z-index: 20001;
+    background: white;
+    opacity: 1;
+
+    background: white;
+    border: none;
+    resize:none;
+    max-height: 550px;
+
+}
+
+textarea:focus, input:focus
+{
+    outline: none;
 }

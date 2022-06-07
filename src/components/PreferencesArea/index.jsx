@@ -17,8 +17,8 @@ export default function PreferencesArea() {
 
     const [fileInput, setFileInput] = React.useState(null);
     React.useEffect(() => {
-            dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
-            //  dispatch(setText('123123123123213'));
+           // dispatch(setImage(['https://sun9-west.userapi.com/sun9-39/s/v1/if2/WnaUDudfVL5N3TEanMqOQ926BhEkeL8OmztoAl-y0uLxhWIyKxO-GEEq1WjB40ZMFAOwPIQvtVno5yorRc0lCw8_.jpg?size=750x478&quality=96&type=album', 400, 400]))
+            dispatch(setText('123123123123213'));
             console.log(123123)
         }, []
     )
@@ -43,9 +43,7 @@ export default function PreferencesArea() {
         if (file) {
             reader.readAsDataURL(file);
         }
-        // else {
-        //     preview.src = "";
-        // }
+
     }
 
     return (
@@ -86,10 +84,11 @@ export default function PreferencesArea() {
             <div>
 
                 <button onClick={() => {
-                    dispatch(setText("123123"));
+                    // dispatch(setText(insertText));
+                    dispatch(setText('Текст текст'));
                 }}>Вставить текст
                 </button>
-                <input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>
+                {/*<input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>*/}
             </div>
 
 

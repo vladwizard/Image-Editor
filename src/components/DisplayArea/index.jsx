@@ -4,6 +4,7 @@ import './DisplayArea.css'
 import {useSelector, useDispatch} from 'react-redux'
 import {changeText} from '../../Redux/slices/imagesDataSlice'
 
+
 export default function DisplayArea() {
     const images = useSelector((state) => state.imagesData.items);
     const textSelector = useSelector((state) => state.imagesData.text);
@@ -12,7 +13,7 @@ export default function DisplayArea() {
 
     React.useEffect(
         () => {
-            if(textSelector!=null) {
+            if (textSelector != null) {
                 let c = {}
                 for (let key in textSelector) {
                     c[key] = textSelector[key];
@@ -33,16 +34,14 @@ export default function DisplayArea() {
     const backgroundWidth = useSelector((state) => state.imagesData.backgroundWidth);
     const backgroundImg = useSelector((state) => state.imagesData.backgroundImg);
 
-    useEffect(()=>{
-    if(backgroundImg!=0 && backgroundImg!=null) {
-        backgroundRef.current.style.background = 'url(' + backgroundImg + ')';
-        backgroundRef.current.style.backgroundSize= '100% 100%';
-    }
-    else
-        backgroundRef.current.style.background='white';
+    useEffect(() => {
+        if (backgroundImg != 0 && backgroundImg != null) {
+            backgroundRef.current.style.background = 'url(' + backgroundImg + ')';
+            backgroundRef.current.style.backgroundSize = '100% 100%';
+        } else
+            backgroundRef.current.style.background = 'white';
 
-    },[backgroundImg])
-
+    }, [backgroundImg])
 
 
     const backgroundRef = React.useRef(null);
@@ -93,10 +92,10 @@ export default function DisplayArea() {
 
     const inputTextRef = React.useRef();
 
-    useEffect(()=>{
-    if(inputTextRef.current!=null && textInput=='')
-        inputTextRef.current.focus();
-    },[showTextInput])
+    useEffect(() => {
+        if (inputTextRef.current != null && textInput == '')
+            inputTextRef.current.focus();
+    }, [showTextInput])
 
     return (
         <div className='displayArea'
@@ -108,63 +107,65 @@ export default function DisplayArea() {
                  document.onmousemove = null;
              }}
         >
-            <div className="background" ref={backgroundRef}
 
-                 style={{
-                     'height': backgroundHeight + 'px',
-                     'width': backgroundWidth + 'px',
 
-                     'left': backgroundLeft + 'px',
-                     'top': backgroundTop + 'px',
-                 }}
+                <div className="background" id='qwerty' ref={backgroundRef}
 
-            >
-                {images.map((item, index) =>
+                     style={{
+                         'height': backgroundHeight + 'px',
+                         'width': backgroundWidth + 'px',
 
-                    <img src={item.str}
-                         className={`image ${((index) == holden && chosenType == 'text') ? 'active' : ""}`}
-                         ref={(index == choosen && chosenType == 'img') ? choosenRef : null}
+                         'left': backgroundLeft + 'px',
+                         'top': backgroundTop + 'px',
+                     }}
 
-                         style={{
-                             'transform': 'translate(-50%,-50%)',
-                             'height': item.height + 'px',
-                             'width': item.width + 'px',
-                             'minHeight': 30 + 'px',
-                             'minWidth': 30 + 'px',
-                             'left': backgroundWidth / 2 + 'px',
-                             'top': backgroundHeight / 2 + 'px',
+                >
+                    {images.map((item, index) =>
 
-                         }}
+                        <img src={item.str}
+                             className={`image ${((index) == holden && chosenType == 'text') ? 'active' : ""}`}
+                             ref={(index == choosen && chosenType == 'img') ? choosenRef : null}
 
-                         onMouseDown={(e) => {
+                             style={{
+                                 'transform': 'translate(-50%,-50%)',
+                                 'height': item.height + 'px',
+                                 'width': item.width + 'px',
+                                 'minHeight': 30 + 'px',
+                                 'minWidth': 30 + 'px',
+                                 'left': backgroundWidth / 2 + 'px',
+                                 'top': backgroundHeight / 2 + 'px',
 
-                             setShowSizeBox(false);
-                             setChoosen(index);
-                             setChoosenType('img');
+                             }}
 
-                             setChoosenWidth(parseInt(e.target.style.width));
-                             setChoosenHeight(parseInt(e.target.style.height));
-                             setHolden(index);
+                             onMouseDown={(e) => {
 
-                             document.onmousemove = function (ev) {
-                                 e.target.style.left = parseInt(e.target.style.left) + ev.movementX * windowScale + 'px';
-                                 e.target.style.top = parseInt(e.target.style.top) + ev.movementY * windowScale + 'px';
-                             }
+                                 setShowSizeBox(false);
+                                 setChoosen(index);
+                                 setChoosenType('img');
 
-                         }}
-                         onClick={(e) => {
+                                 setChoosenWidth(parseInt(e.target.style.width));
+                                 setChoosenHeight(parseInt(e.target.style.height));
+                                 setHolden(index);
 
-                             e.stopPropagation();
-                         }}
-                         onMouseUp={() => {
-                             document.onmousemove = null;
-                             setShowSizeBox(true);
-                             setHolden(-1)
+                                 document.onmousemove = function (ev) {
+                                     e.target.style.left = parseInt(e.target.style.left) + ev.movementX * windowScale + 'px';
+                                     e.target.style.top = parseInt(e.target.style.top) + ev.movementY * windowScale + 'px';
+                                 }
 
-                         }}
+                             }}
+                             onClick={(e) => {
 
-                    />
-                )}
+                                 e.stopPropagation();
+                             }}
+                             onMouseUp={() => {
+                                 document.onmousemove = null;
+                                 setShowSizeBox(true);
+                                 setHolden(-1)
+
+                             }}
+
+                        />
+                    )}
 
                 {texts.map((item, index) =>
 
@@ -173,7 +174,7 @@ export default function DisplayArea() {
                          ref={(index == choosen && chosenType == 'text') ? choosenRef : null}
 
                          style={{
-                             'color':item.color,
+                             'color': item.color,
                              'transform': 'translate(-50%,-50%)',
                              'height': item.height + 'px',
                              'width': item.width + 'px',
@@ -285,20 +286,18 @@ export default function DisplayArea() {
                      onClick={() => {
                          setShowTextInput(false);
                          // console.log(choosen, textInput)
-                         if(textInput==''){
-                               texts.splice(choosen,1);
-                              // console.log(texts)
-                         }
-                         else
-                         {
+                         if (textInput == '') {
+                             texts.splice(choosen, 1);
+                             // console.log(texts)
+                         } else {
                              texts[choosen].str = textInput;
                              texts[choosen].n = textInput.split('\n').length;
                          }
                      }}
                 >
                     <textarea ref={inputTextRef} value={textInput} rows={
-                        textInput.length==0?1:
-                        textInput.split('\n').filter((line)=>line.length>25).length + textInput.split('\n').length
+                        textInput.length == 0 ? 1 :
+                            textInput.split('\n').filter((line) => line.length > 25).length + textInput.split('\n').length
                     }
                               onChange={(e) => setTextInput(e.target.value)}
                               onClick={(e) => e.stopPropagation()}

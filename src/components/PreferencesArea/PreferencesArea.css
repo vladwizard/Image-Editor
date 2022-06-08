@@ -30,7 +30,6 @@ textarea{
 .preferencesArea * button{
     border: solid black 0.1vh;
     padding: 0.5vh 1vh;
-    margin-bottom:5vh;
 }
 
 
@@ -47,7 +46,7 @@ display: block;
     height: 30vh;
 }
 .preferencesArea div{
-    margin-bottom: 2vh;
+margin-bottom: 1vh;
 }
 input[type=checkbox]{
     height: 3vh;

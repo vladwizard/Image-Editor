@@ -1,8 +1,8 @@
 .background{
-    background: white;
+    background: black;
     position: absolute;
     transform: translate(-50%,-50%);
-
+    overflow: hidden;
 }
 
 img{

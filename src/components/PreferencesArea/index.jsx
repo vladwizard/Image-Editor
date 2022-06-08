@@ -3,8 +3,11 @@ import './PreferencesArea.css'
 import s from '../../assets/background.png'
 import {useSelector, useDispatch} from 'react-redux'
 import {setText, setImage, setBackgroundImage, setBackgroundSize} from '../../Redux/slices/imagesDataSlice'
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 export default function PreferencesArea() {
+
 
     const backgroundHeight = useSelector((state) => state.imagesData.backgroundHeight)
     const backgroundWidth = useSelector((state) => state.imagesData.backgroundWidth);
@@ -70,7 +73,7 @@ export default function PreferencesArea() {
     }
 
     const [proportion, setProportion] = React.useState(false);
-    const [color,setColor] =React.useState('#000000');
+    const [color, setColor] = React.useState('#000000');
 
     return (
         <div className='preferencesArea'>
@@ -87,7 +90,7 @@ export default function PreferencesArea() {
                 <label>Ширина</label> <input type='text' value={Math.round(backgroundWidth)}
                                              onChange={(e) => {
                                                  let width = e.target.value;
-                                                 console.log(1,width)
+                                                 console.log(1, width)
                                                  if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
                                                  else dispatch(setBackgroundSize([width, backgroundHeight]))
                                              }}/>
@@ -147,11 +150,38 @@ export default function PreferencesArea() {
                     dispatch(setText(color));
                 }}>Вставить текст
                 </button>
-                <p>Цвет: <input type="color" name="bg" value={color} onChange={(e)=>setColor(e.target.value)}/></p>
+                <p>Цвет: <input type="color" name="bg" value={color} onChange={(e) => setColor(e.target.value)}/></p>
                 {/*<input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>*/}
             </div>
 
+            <button
+                onClick={() => {
+                    let node = document.getElementById('qwerty');
+                    node.style.position='static';
+                    node.style.transform='translate(0,0)'
 
+                    domtoimage.toBlob(node)
+                        .then(function (blob) {
+                            window.saveAs(blob, 'goodPng.png');
+                        });
+                    setTimeout(()=>{
+                        node.style.position='absolute';
+                        node.style.transform='translate(-50%,-50%)'
+                    },500)
+
+
+                    // domtoimage.toPng(node)
+                    //     .then(function (dataUrl) {
+                    //         var img = new Image();
+                    //         img.src = dataUrl;
+                    //         document.body.appendChild(img);
+                    //     })
+                    //     .catch(function (error) {
+                    //         console.error('oops, something went wrong!', error);
+                    //     });
+                }}
+            >Сохранить
+            </button>
         </div>
     )
 }

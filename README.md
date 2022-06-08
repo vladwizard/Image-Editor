@@ -1,5 +1,6 @@
 # ImageRedactor
 This application allows you to insert an unlimited number of images and color text, resize any element interactively, and save the result to your computer in png. Page scaling is adapted.
+Used Redux toolkit, dom to image, file-saver.
 ## Start page
 ![Screenshot 2022-06-08 22 10 46](https://user-images.githubusercontent.com/72702845/172700282-a5326117-6d52-483d-9f97-809e93c3def2.png)
 ## Resize and repos image

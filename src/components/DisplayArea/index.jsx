@@ -12,11 +12,18 @@ export default function DisplayArea() {
 
     React.useEffect(
         () => {
-            let c = {}
-            for (let key in textSelector) {
-                c[key] = textSelector[key];
+            if(textSelector!=null) {
+                let c = {}
+                for (let key in textSelector) {
+                    c[key] = textSelector[key];
+                }
+                setTexts(texts.concat(c))
+                setChoosen(texts.length);
+                setChoosenType('text')
+                setShowTextInput(true);
+                setTextInput('');
+
             }
-            setTexts(texts.concat(c))
         }, [textSelector]
     )
 
@@ -63,7 +70,7 @@ export default function DisplayArea() {
         backgroundRef.current.style.top = backgroundTop + 'px';
     }
 
-    // choosen elements props
+
     const [choosen, setChoosen] = React.useState(-1);
     const [chosenType, setChoosenType] = React.useState('');
     const choosenRef = useRef();
@@ -75,8 +82,8 @@ export default function DisplayArea() {
     const [textInput, setTextInput] = React.useState('');
 
 
-    const [currentWidth, setCurrentWidth] = React.useState(0);
-    const [currentHeight, setCurrenHeight] = React.useState(0);
+    // const [currentWidth, setCurrentWidth] = React.useState(0);
+    // const [currentHeight, setCurrenHeight] = React.useState(0);
 
     //Bool show elements
     const [showSizeBox, setShowSizeBox] = useState(false);
@@ -86,10 +93,10 @@ export default function DisplayArea() {
 
     const inputTextRef = React.useRef();
 
-    // useEffect(()=>{
-    // if(inputTextRef.current!=null)
-    //     inputTextRef.current.focus();
-    // },[showTextInput])
+    useEffect(()=>{
+    if(inputTextRef.current!=null && textInput=='')
+        inputTextRef.current.focus();
+    },[showTextInput])
 
     return (
         <div className='displayArea'
@@ -166,6 +173,7 @@ export default function DisplayArea() {
                          ref={(index == choosen && chosenType == 'text') ? choosenRef : null}
 
                          style={{
+                             'color':item.color,
                              'transform': 'translate(-50%,-50%)',
                              'height': item.height + 'px',
                              'width': item.width + 'px',
@@ -277,12 +285,18 @@ export default function DisplayArea() {
                      onClick={() => {
                          setShowTextInput(false);
                          // console.log(choosen, textInput)
-                         texts[choosen].str = textInput;
-                         texts[choosen].n = textInput.split('\n').length;
+                         if(textInput==''){
+                               texts.splice(choosen,1);
+                              // console.log(texts)
+                         }
+                         else
+                         {
+                             texts[choosen].str = textInput;
+                             texts[choosen].n = textInput.split('\n').length;
+                         }
                      }}
                 >
                     <textarea ref={inputTextRef} value={textInput} rows={
-                        // Math.ceil((textInput.length) / 25)
                         textInput.length==0?1:
                         textInput.split('\n').filter((line)=>line.length>25).length + textInput.split('\n').length
                     }
@@ -290,6 +304,7 @@ export default function DisplayArea() {
                               onClick={(e) => e.stopPropagation()}
 
                     />
+
                 </div>
             ) : ''}
         </div>

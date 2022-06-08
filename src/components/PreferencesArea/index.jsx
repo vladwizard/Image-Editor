@@ -1,8 +1,8 @@
 import React from "react";
-import style from './PreferencesArea.css'
+import './PreferencesArea.css'
 import s from '../../assets/background.png'
 import {useSelector, useDispatch} from 'react-redux'
-import {setText, setImage, setBackgroundImage,setBackgroundSize} from '../../Redux/slices/imagesDataSlice'
+import {setText, setImage, setBackgroundImage, setBackgroundSize} from '../../Redux/slices/imagesDataSlice'
 
 export default function PreferencesArea() {
 
@@ -11,7 +11,6 @@ export default function PreferencesArea() {
 
     const images = useSelector((state) => state.imagesData.items);
     const dispatch = useDispatch()
-
 
 
     const [imageURl, setImageURL] = React.useState('');
@@ -25,6 +24,7 @@ export default function PreferencesArea() {
     const [insertText, setInsertText] = React.useState('');
 
     const backgroundInputRef = React.createRef();
+
     function inputBackground() {
         let file = backgroundInputRef.current.files[0];
         let reader = new FileReader();
@@ -48,6 +48,7 @@ export default function PreferencesArea() {
 
 
     const imgInputRef = React.createRef();
+
     function SetImage() {
         let file = imgInputRef.current.files[0];
         let reader = new FileReader();
@@ -68,37 +69,44 @@ export default function PreferencesArea() {
 
     }
 
-    const [proportion,setProportion]=React.useState(false);
+    const [proportion, setProportion] = React.useState(false);
+    const [color,setColor] =React.useState('#000000');
+
     return (
         <div className='preferencesArea'>
             <div className='sizeBackground'>
-                <label>Высота</label> <input type='text' value={backgroundHeight}
+                <label>Высота</label> <input type='text' value={Math.round(backgroundHeight)}
                                              onChange={(e) => {
                                                  let height = e.target.value;
-                                                 if(proportion == true) dispatch(setBackgroundSize([Math.round(height/backgroundHeight) * backgroundWidth,height ]))
+                                                 console.log(0, height)
+                                                 if (proportion == true) dispatch(setBackgroundSize([(height / backgroundHeight) * backgroundWidth, height]))
                                                  else dispatch(setBackgroundSize([backgroundWidth, height]))
                                              }}/>
             </div>
             <div className='sizeBackground'>
-                <label>Ширина</label> <input type='text' value={backgroundWidth}
+                <label>Ширина</label> <input type='text' value={Math.round(backgroundWidth)}
                                              onChange={(e) => {
                                                  let width = e.target.value;
-                                                 if(proportion == true) dispatch(setBackgroundSize([width,Math.round(width/backgroundWidth) * backgroundHeight ]))
+                                                 console.log(1,width)
+                                                 if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
                                                  else dispatch(setBackgroundSize([width, backgroundHeight]))
                                              }}/>
             </div>
             <div>
                 <label>Сохранять пропорции</label>
-                <input type='checkbox' value={proportion} onChange={(e)=>setProportion(e.target.value)}/>
+                <input type='checkbox' checked={proportion} onChange={(e) => {
+                    setProportion(e.target.checked);
+                }}/>
             </div>
 
             <div>
                 <button
-                onClick={(e)=>{
-                    dispatch(setBackgroundImage(null));
-                    backgroundInputRef.current.value = null;
-                }}
-                > Убрать фон</button>
+                    onClick={(e) => {
+                        dispatch(setBackgroundImage(null));
+                        backgroundInputRef.current.value = null;
+                    }}
+                > Убрать фон
+                </button>
 
             </div>
             <div>
@@ -136,9 +144,10 @@ export default function PreferencesArea() {
 
                 <button onClick={() => {
                     // dispatch(setText(insertText));
-                    dispatch(setText('Текст текст'));
+                    dispatch(setText(color));
                 }}>Вставить текст
                 </button>
+                <p>Цвет: <input type="color" name="bg" value={color} onChange={(e)=>setColor(e.target.value)}/></p>
                 {/*<input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>*/}
             </div>
 

@@ -7,17 +7,17 @@ const Data = (str, width, height, posX = 0, posY = 0) => {
         height,
     })
 }
-const textData = (str, width, height, fontSize = 32, i) => {
+const textData = (color, width, height, fontSize = 32) => {
     return ({
-        str,
+        color,
         width,
         height,
         startWidth: width,
         startHeight: height,
+        str:'123',
         FontSize: 32,
         n: 1,
-        longest: str.length,
-        i
+
     })
 }
 
@@ -70,8 +70,12 @@ export const imagesDataSlice = createSlice({
         },
 
         setBackgroundSize: (state, action) => {
-            state.backgroundWidth = action.payload[0];
-            state.backgroundHeight = action.payload[1];
+            // let width = action.payload[0]
+            // if(width < 1) width = 1;
+            state.backgroundWidth =action.payload[0];
+            // let height = action.payload[1]
+            // if(height < 1) height = 1;
+            state.backgroundHeight =action.payload[1];
         },
         setText: (state, action) => {
             let fs = 32;

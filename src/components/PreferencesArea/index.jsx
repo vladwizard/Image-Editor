@@ -88,17 +88,18 @@ export default function PreferencesArea() {
             </div>
             <div className='double_fr'>
                 <label>Ширина</label> <input type='text' value={Math.round(backgroundWidth)}
-                                     onChange={(e) => {
-                                         let width = e.target.value;
-                                         console.log(1, width)
-                                         if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
-                                         else dispatch(setBackgroundSize([width, backgroundHeight]))
-                                     }}/>
+                                             onChange={(e) => {
+                                                 let width = e.target.value;
+                                                 console.log(1, width)
+                                                 if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
+                                                 else dispatch(setBackgroundSize([width, backgroundHeight]))
+                                             }}/>
             </div>
             <div className='line'>
-                <p>Сохранять пропорции</p><input type='checkbox' checked={proportion} onChange={(e) => {
-                setProportion(e.target.checked);
-            }}/>
+                <p>Сохранять пропорции</p>
+     <input type='checkbox' checked={proportion} onChange={(e) => {
+                    setProportion(e.target.checked);
+                }}/>
 
             </div>
 
@@ -113,8 +114,8 @@ export default function PreferencesArea() {
 
             </div>
             <div>
-                <label className='file_label' htmlFor="image_uploads">Вставить фон файлом </label>
-                <input className='file_input' type="file" onChange={inputBackground} id="image_uploads"
+                <label className='file_label' htmlFor="background_uploads">Вставить фон файлом </label>
+                <input className='file_input' type="file" onChange={inputBackground} id="background_uploads"
                        accept=".jpg, .jpeg, .png" ref={backgroundInputRef}/>
             </div>
             <div>

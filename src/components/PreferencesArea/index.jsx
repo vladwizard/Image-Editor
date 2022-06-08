@@ -119,7 +119,7 @@ export default function PreferencesArea() {
                        accept=".jpg, .jpeg, .png" ref={backgroundInputRef}/>
             </div>
             <div>
-                <label className='file_label'>Вставить картинку файлом</label>
+                <label className='file_label' htmlFor="image_uploads">Вставить картинку файлом</label>
                 <input className='file_input' type="file" onChange={SetImage} id="image_uploads"
                        accept=".jpg, .jpeg, .png" ref={imgInputRef}/>
             </div>

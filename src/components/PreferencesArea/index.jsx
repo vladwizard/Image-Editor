@@ -4,7 +4,7 @@ import s from '../../assets/background.png'
 import {useSelector, useDispatch} from 'react-redux'
 import {setText, setImage, setBackgroundImage, setBackgroundSize} from '../../Redux/slices/imagesDataSlice'
 import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
+import {saveAs} from 'file-saver';
 
 export default function PreferencesArea() {
 
@@ -77,7 +77,7 @@ export default function PreferencesArea() {
 
     return (
         <div className='preferencesArea'>
-            <div className='sizeBackground'>
+            <div className='double_fr'>
                 <label>Высота</label> <input type='text' value={Math.round(backgroundHeight)}
                                              onChange={(e) => {
                                                  let height = e.target.value;
@@ -86,20 +86,20 @@ export default function PreferencesArea() {
                                                  else dispatch(setBackgroundSize([backgroundWidth, height]))
                                              }}/>
             </div>
-            <div className='sizeBackground'>
+            <div className='double_fr'>
                 <label>Ширина</label> <input type='text' value={Math.round(backgroundWidth)}
-                                             onChange={(e) => {
-                                                 let width = e.target.value;
-                                                 console.log(1, width)
-                                                 if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
-                                                 else dispatch(setBackgroundSize([width, backgroundHeight]))
-                                             }}/>
+                                     onChange={(e) => {
+                                         let width = e.target.value;
+                                         console.log(1, width)
+                                         if (proportion == true) dispatch(setBackgroundSize([width, (width / backgroundWidth) * backgroundHeight]))
+                                         else dispatch(setBackgroundSize([width, backgroundHeight]))
+                                     }}/>
             </div>
-            <div>
-                <label>Сохранять пропорции</label>
-                <input type='checkbox' checked={proportion} onChange={(e) => {
-                    setProportion(e.target.checked);
-                }}/>
+            <div className='line'>
+                <p>Сохранять пропорции</p><input type='checkbox' checked={proportion} onChange={(e) => {
+                setProportion(e.target.checked);
+            }}/>
+
             </div>
 
             <div>
@@ -113,10 +113,14 @@ export default function PreferencesArea() {
 
             </div>
             <div>
-                <label>Вставить фон файлом</label>
-                <input type="file" onChange={inputBackground} ref={backgroundInputRef}>
-
-                </input>
+                <label className='file_label' htmlFor="image_uploads">Вставить фон файлом </label>
+                <input className='file_input' type="file" onChange={inputBackground} id="image_uploads"
+                       accept=".jpg, .jpeg, .png" ref={backgroundInputRef}/>
+            </div>
+            <div>
+                <label className='file_label'>Вставить картинку файлом</label>
+                <input className='file_input' type="file" onChange={SetImage} id="image_uploads"
+                       accept=".jpg, .jpeg, .png" ref={imgInputRef}/>
             </div>
 
             <div className='urlArea'>
@@ -139,11 +143,8 @@ export default function PreferencesArea() {
                 }}>Отправить
                 </button>
             </div>
-            <div>
-                <label>Вставить файлом</label>
-                <input type="file" onChange={SetImage} ref={imgInputRef}></input>
-            </div>
-            <div>
+
+            <div className='double_fr'>
 
                 <button onClick={() => {
                     // dispatch(setText(insertText));
@@ -154,32 +155,32 @@ export default function PreferencesArea() {
                 {/*<input value={insertText} onChange={(e) => setInsertText(e.target.value)} width='80%'/>*/}
             </div>
 
-            <button
-                onClick={() => {
-                    let node = document.getElementById('qwerty');
-                    node.style.position='static';
-                    node.style.transform='translate(0,0)'
+            <button className='save_button'
+                    onClick={() => {
+                        let node = document.getElementById('qwerty');
+                        node.style.position = 'static';
+                        node.style.transform = 'translate(0,0)'
 
-                    domtoimage.toBlob(node)
-                        .then(function (blob) {
-                            window.saveAs(blob, 'goodPng.png');
-                        });
-                    setTimeout(()=>{
-                        node.style.position='absolute';
-                        node.style.transform='translate(-50%,-50%)'
-                    },500)
+                        domtoimage.toBlob(node)
+                            .then(function (blob) {
+                                window.saveAs(blob, 'goodPng.png');
+                            });
+                        setTimeout(() => {
+                            node.style.position = 'absolute';
+                            node.style.transform = 'translate(-50%,-50%)'
+                        }, 500)
 
 
-                    // domtoimage.toPng(node)
-                    //     .then(function (dataUrl) {
-                    //         var img = new Image();
-                    //         img.src = dataUrl;
-                    //         document.body.appendChild(img);
-                    //     })
-                    //     .catch(function (error) {
-                    //         console.error('oops, something went wrong!', error);
-                    //     });
-                }}
+                        // domtoimage.toPng(node)
+                        //     .then(function (dataUrl) {
+                        //         var img = new Image();
+                        //         img.src = dataUrl;
+                        //         document.body.appendChild(img);
+                        //     })
+                        //     .catch(function (error) {
+                        //         console.error('oops, something went wrong!', error);
+                        //     });
+                    }}
             >Сохранить
             </button>
         </div>

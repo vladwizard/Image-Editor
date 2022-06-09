@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import imagesDataSlice from './slices/imagesDataSlice'
+import displayItemsSlice from './slices/displayItemsSlice'
 
 export const store = configureStore({
     reducer: {
-        imagesData: imagesDataSlice,
+        data: displayItemsSlice,
     },
 })

@@ -1,14 +1,29 @@
 import React, {useEffect, useRef, useState} from "react";
-// import background from '../../assets/background.png'
 import './DisplayArea.css'
 import {useSelector, useDispatch} from 'react-redux'
-import {changeText} from '../../Redux/slices/imagesDataSlice'
-
 
 export default function DisplayArea() {
-    const images = useSelector((state) => state.imagesData.items);
-    const textSelector = useSelector((state) => state.imagesData.text);
 
+    //хранилища
+    const imageSelector = useSelector((state) => state.data.image);
+    const [images, setImages] = React.useState([]);
+    React.useEffect(
+        () => {
+            console.log(imageSelector)
+            if (imageSelector != null) {
+                let c = {}
+                for (let key in imageSelector) {
+                    c[key] = imageSelector[key];
+                }
+                setImages(images.concat(c))
+            }
+        }, [imageSelector]
+    )
+
+    const textSelector = useSelector((state) => state.data.text);
+
+
+    //Приём текста
     const [texts, setTexts] = React.useState([]);
 
     React.useEffect(
@@ -28,12 +43,12 @@ export default function DisplayArea() {
         }, [textSelector]
     )
 
-    // const dispatch = useDispatch()
+    //Задний фон
+    const backgroundHeight = useSelector((state) => state.data.backgroundHeight)
+    const backgroundWidth = useSelector((state) => state.data.backgroundWidth);
+    const backgroundImg = useSelector((state) => state.data.backgroundImg);
 
-    const backgroundHeight = useSelector((state) => state.imagesData.backgroundHeight)
-    const backgroundWidth = useSelector((state) => state.imagesData.backgroundWidth);
-    const backgroundImg = useSelector((state) => state.imagesData.backgroundImg);
-
+    const backgroundRef = React.useRef(null);
     useEffect(() => {
         if (backgroundImg != 0 && backgroundImg != null) {
             backgroundRef.current.style.background = 'url(' + backgroundImg + ')';
@@ -43,15 +58,14 @@ export default function DisplayArea() {
 
     }, [backgroundImg])
 
-
-    const backgroundRef = React.useRef(null);
-
+    //Абсолютная позиция картинки на документе
     let bodyWidth = document.documentElement.clientWidth;
     let bodyHeight = document.documentElement.clientHeight;
 
     let backgroundLeft = (bodyWidth * 0.8) / 2 + bodyWidth * 0.2;
     let backgroundTop = bodyHeight * 0.5;
 
+    // адаптиция маштабирования
     const [windowScale, setWindowScale] = React.useState(1);
 
     window.onload = () => {
@@ -69,29 +83,26 @@ export default function DisplayArea() {
         backgroundRef.current.style.top = backgroundTop + 'px';
     }
 
-
+    //Указатеои на выбранный елемент
     const [choosen, setChoosen] = React.useState(-1);
     const [chosenType, setChoosenType] = React.useState('');
     const choosenRef = useRef();
-    const [holden, setHolden] = React.useState(-1);
 
+    const [asserted, setAsserted] = React.useState(-1);
+
+    //необходимы для отрисовки boxSizing
     const [choosenWidth, setChoosenWidth] = React.useState(0);
     const [choosenHeight, setChoosenHeight] = React.useState(0);
 
-    const [textInput, setTextInput] = React.useState('');
-
-
-    // const [currentWidth, setCurrentWidth] = React.useState(0);
-    // const [currentHeight, setCurrenHeight] = React.useState(0);
-
-    //Bool show elements
-    const [showSizeBox, setShowSizeBox] = useState(false);
-    const [showTextInput, setShowTextInput] = useState(false);
-
     const buttonSize = 50;
+    const [showSizeBox, setShowSizeBox] = useState(false);
 
+    // редактор текста
+    const [textInput, setTextInput] = React.useState('');
+    const [showTextInput, setShowTextInput] = useState(false);
     const inputTextRef = React.useRef();
 
+    //автофокус при добавлении текста
     useEffect(() => {
         if (inputTextRef.current != null && textInput == '')
             inputTextRef.current.focus();
@@ -108,69 +119,64 @@ export default function DisplayArea() {
              }}
         >
 
+            <div className="background" id='save' ref={backgroundRef}
 
-                <div className="background" id='qwerty' ref={backgroundRef}
+                 style={{
+                     'height': backgroundHeight + 'px',
+                     'width': backgroundWidth + 'px',
 
-                     style={{
-                         'height': backgroundHeight + 'px',
-                         'width': backgroundWidth + 'px',
+                     'left': backgroundLeft + 'px',
+                     'top': backgroundTop + 'px',
+                 }}
 
-                         'left': backgroundLeft + 'px',
-                         'top': backgroundTop + 'px',
-                     }}
+            >
+                {images.map((item, index) =>
 
-                >
-                    {images.map((item, index) =>
+                    <img src={item.str} key={item.id}
+                         className={`image ${((index) == asserted && chosenType == 'text') ? 'holding' : ""}`}
+                         ref={(index == choosen && chosenType == 'img') ? choosenRef : null}
 
-                        <img src={item.str}
-                             className={`image ${((index) == holden && chosenType == 'text') ? 'active' : ""}`}
-                             ref={(index == choosen && chosenType == 'img') ? choosenRef : null}
+                         style={{
+                             'transform': 'translate(-50%,-50%)',
+                             'height': item.height + 'px',
+                             'width': item.width + 'px',
+                             'minHeight': 30 + 'px',
+                             'minWidth': 30 + 'px',
+                             'left': backgroundWidth / 2 + 'px',
+                             'top': backgroundHeight / 2 + 'px',
 
-                             style={{
-                                 'transform': 'translate(-50%,-50%)',
-                                 'height': item.height + 'px',
-                                 'width': item.width + 'px',
-                                 'minHeight': 30 + 'px',
-                                 'minWidth': 30 + 'px',
-                                 'left': backgroundWidth / 2 + 'px',
-                                 'top': backgroundHeight / 2 + 'px',
+                         }}
+                         onMouseDown={(e) => {
+                             setShowSizeBox(false);
+                             setChoosen(index);
+                             setChoosenType('img');
 
-                             }}
+                             setChoosenWidth(parseInt(e.target.style.width));
+                             setChoosenHeight(parseInt(e.target.style.height));
+                             setAsserted(index);
 
-                             onMouseDown={(e) => {
+                             document.onmousemove = function (ev) {
+                                 e.target.style.left = parseInt(e.target.style.left) + ev.movementX * windowScale + 'px';
+                                 e.target.style.top = parseInt(e.target.style.top) + ev.movementY * windowScale + 'px';
+                             }
+                         }}
+                         onClick={(e) => {
 
-                                 setShowSizeBox(false);
-                                 setChoosen(index);
-                                 setChoosenType('img');
+                             e.stopPropagation();
+                         }}
+                         onMouseUp={() => {
+                             document.onmousemove = null;
+                             setShowSizeBox(true);
+                             setAsserted(-1)
 
-                                 setChoosenWidth(parseInt(e.target.style.width));
-                                 setChoosenHeight(parseInt(e.target.style.height));
-                                 setHolden(index);
-
-                                 document.onmousemove = function (ev) {
-                                     e.target.style.left = parseInt(e.target.style.left) + ev.movementX * windowScale + 'px';
-                                     e.target.style.top = parseInt(e.target.style.top) + ev.movementY * windowScale + 'px';
-                                 }
-
-                             }}
-                             onClick={(e) => {
-
-                                 e.stopPropagation();
-                             }}
-                             onMouseUp={() => {
-                                 document.onmousemove = null;
-                                 setShowSizeBox(true);
-                                 setHolden(-1)
-
-                             }}
-
-                        />
-                    )}
+                         }}
+                    />
+                )}
 
                 {texts.map((item, index) =>
 
-                    <div key={index}
-                         className={`text${index} ${(index == holden && chosenType == 'text') ? 'active' : ""}`}
+                    <div key={item.id}
+                         className={`text${index} ${(index == asserted && chosenType == 'text') ? 'active' : ""}`}
                          ref={(index == choosen && chosenType == 'text') ? choosenRef : null}
 
                          style={{
@@ -185,7 +191,6 @@ export default function DisplayArea() {
 
 
                          }}
-
                          onDoubleClick={() => {
                              setTextInput(item.str);
                              setShowTextInput(true)
@@ -196,7 +201,7 @@ export default function DisplayArea() {
                              setChoosenType('text');
                              setChoosenWidth(parseInt(e.target.style.width));
                              setChoosenHeight(parseInt(e.target.style.height));
-                             setHolden(index);
+                             setAsserted(index);
 
                              document.onmousemove = function (ev) {
                                  e.target.style.left = parseInt(e.target.style.left) + ev.movementX * windowScale + 'px';
@@ -209,10 +214,9 @@ export default function DisplayArea() {
                          onMouseUp={() => {
                              document.onmousemove = null;
                              setShowSizeBox(true);
-                             setHolden(-1)
+                             setAsserted(-1)
 
                          }}
-
                     >
                         {item.str}
                     </div>
@@ -222,7 +226,6 @@ export default function DisplayArea() {
 
                 [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]].map((item) =>
                     <button
-
                         style={(Math.abs(item[0]) == 1 && Math.abs(item[1]) == 1) ?
                             {
                                 'width': buttonSize + 12 + 'px',
@@ -273,7 +276,6 @@ export default function DisplayArea() {
                             }
                         }
                         }
-
                         onMouseUp={() => {
                             document.onmousemove = null;
                         }}
@@ -285,13 +287,12 @@ export default function DisplayArea() {
                 <div className="textInput"
                      onClick={() => {
                          setShowTextInput(false);
-                         // console.log(choosen, textInput)
                          if (textInput == '') {
                              texts.splice(choosen, 1);
-                             // console.log(texts)
                          } else {
                              texts[choosen].str = textInput;
                              texts[choosen].n = textInput.split('\n').length;
+                             texts[choosen].width = textInput.length * 20 * parseInt(choosenRef.current.style.height) / texts[choosen].height;
                          }
                      }}
                 >
@@ -301,11 +302,28 @@ export default function DisplayArea() {
                     }
                               onChange={(e) => setTextInput(e.target.value)}
                               onClick={(e) => e.stopPropagation()}
-
                     />
-
                 </div>
             ) : ''}
+            {asserted != -1 ?
+                <div className='trash'
+                     onMouseUp={() => {
+                         if (chosenType == 'img') {
+                             images.splice(choosen, 1)
+                             setAsserted(-1)
+                             setChoosen(-1);
+                         } else if (chosenType == 'text') {
+                             texts.splice(choosen, 1)
+                             setAsserted(-1)
+                             setChoosen(-1);
+                         }
+                     }
+                     }
+                >
+                    Удалить
+                </div>
+                : ''
+            }
         </div>
     )
 }

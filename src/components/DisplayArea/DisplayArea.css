@@ -8,12 +8,12 @@
 img{
     position: absolute;
     pointer-events: all;
-
 }
+
 .background *{
     position: absolute;
-
 }
+
 .background div{
     position: absolute;
     display: flex;
@@ -23,39 +23,31 @@ img{
     white-space: pre-wrap;
     font-size: 23px;
 }
+
 .container{
     position: absolute;
     pointer-events: none;
     transform: translate(-50%,-50%);
 
 }
-.active{
+
+.holding{
     opacity: 0.5;
 }
-.pos_button{
-    z-index: 12;
-    position: relative;
 
-}
-.input_range {
-
-    position: absolute;
-
-    transform: rotate(-90deg)
-
-}
 .displayArea button{
     position: absolute;
     opacity: 0.7;
     background: lightgray;
-    /*pointer-events: ;*/
     transform: translate(-50%,-50%);
     border: none;
 }
+
 .displayArea{
     pointer-events: stroke;
     overflow: hidden;
 }
+
 .textInput{
     position: absolute;
     left: 0;
@@ -69,9 +61,9 @@ img{
     justify-content:center;
     align-items: center;
 }
+
 .textInput * {
     word-break: break-all;
-
     width: 1050px;
     text-align:center;
     font-size: 75px;
@@ -82,10 +74,23 @@ img{
     border: none;
     resize:none;
     max-height: 550px;
-
 }
 
-textarea:focus, input:focus
-{
-    outline: none;
+.trash{
+    position: absolute;
+    right: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    font-size: 25px;
+    font-family: 'Tahoma';
+    background: lightgrey;
+    color: white;
+    margin: 30px;
+}
+.trash:hover{
+    background: lightslategrey;
 }

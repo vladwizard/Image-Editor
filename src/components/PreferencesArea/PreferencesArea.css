@@ -1,16 +1,17 @@
-
 textarea{
     margin-top: 1vh;
     width: 90%;
     border: solid black 0.1vh;
     resize:none;
 }
+
 .preferencesArea{
     padding: 2vh 3vh;
     z-index: 10000;
 }
+
 .preferencesArea *{
-    font-size: 2vh ;
+    font-size: 2.5vh ;
     font-family: "Tahoma";
     padding: 0;
     margin: 0;
@@ -26,7 +27,7 @@ button{
     height:5vh;
 }
 
-.file_label{
+.file_load{
     width: 100%;
     height: 6vh;
     border-radius: 0.5vh;
@@ -34,11 +35,11 @@ button{
     cursor: pointer;
     display: block;
     font: 3vh/6vh Tahoma;
-    /*transition: all 0.18s ease-in-out;*/
     border: 0.4vh solid #333;
     color: #333;
     background: white;
 }
+
 .file_input{
     width: 0.1px;
     height: 0.1px;
@@ -48,9 +49,8 @@ button{
     z-index: -1;
 }
 
-
 .urlArea label{
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 .urlArea{
     height: 30vh;
@@ -58,7 +58,7 @@ button{
 }
 
 .preferencesArea div{
-margin-bottom: 1vh;
+    margin-bottom: 1vh;
 }
 
 .double_fr{
@@ -70,11 +70,6 @@ margin-bottom: 1vh;
     grid-gap: 2vh;
 }
 
-.double_fr label{
-
-    font-size: 3vh;
-}
-
 .line{
     width: 100%;
     height: 5vh;
@@ -84,7 +79,6 @@ margin-bottom: 1vh;
 }
 
 input[type="checkbox" i] {
-
     font-size: 2vh;
     border-radius: 1vh;
     width: 4vh;
@@ -92,12 +86,10 @@ input[type="checkbox" i] {
     border: 0.2vh solid black;
     box-sizing: content-box;
 }
+
 .line *{
     font-size: 3vh;
-
-
 }
-
 
 .double_fr input[type=text]{
     width: 100%;
@@ -105,17 +97,14 @@ input[type="checkbox" i] {
     border: 0.1vh solid black;
     padding: 0 0.5vh;
 }
+
 .save_button{
     position:absolute;
     bottom:0;
     margin-bottom: 5vh;
 }
+
 input[type=color]{
-    width: 6vh;
-    height: 4vh;
-    border: 0.2vh solid black;
-}
-input[type=color] *{
     width: 6vh;
     height: 4vh;
     border: 0.2vh solid black;

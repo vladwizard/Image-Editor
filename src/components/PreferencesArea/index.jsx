@@ -76,11 +76,11 @@ export default function PreferencesArea() {
                                                  else dispatch(setBackgroundSize([width, backgroundHeight]))
                                              }}/>
             </div>
-            <div className='line'>
-                <p>Сохранять пропорции</p>
-                <input type='checkbox' checked={proportion} onChange={(e) => {
+            <div >
+                <input className="custom-checkbox" type='checkbox' id="happy" checked={proportion} onChange={(e) => {
                     setProportion(e.target.checked);
                 }}/>
+                <label htmlFor="happy" >Сохранять пропорции</label>
             </div>
 
             <div>

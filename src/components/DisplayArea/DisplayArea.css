@@ -1,96 +1,74 @@
-.background{
-    background: black;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    overflow: hidden;
+.displayArea {
+  pointer-events: stroke;
+  overflow: hidden;
+}
+.displayArea * {
+  position: absolute;
+}
+.displayArea .background {
+  background: black;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.displayArea .background div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-wrap;
+  font-size: 32px;
+}
+.displayArea .background img {
+  pointer-events: all;
+}
+.displayArea .holding {
+  opacity: 0.5;
+}
+.displayArea button {
+  opacity: 0.7;
+  background: lightgray;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+.displayArea .textInput {
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 20000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayArea .textInput * {
+  word-break: break-all;
+  width: 1050px;
+  text-align: center;
+  font-size: 75px;
+  z-index: 20001;
+  background: white;
+  opacity: 1;
+  border: none;
+  resize: none;
+  max-height: 550px;
+}
+.displayArea .trash {
+  right: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  font-size: 25px;
+  font-family: "Tahoma";
+  background: lightgrey;
+  color: white;
+  margin: 30px;
+}
+.displayArea .trash:hover {
+  background: lightslategrey;
 }
 
-img{
-    position: absolute;
-    pointer-events: all;
-}
-
-.background *{
-    position: absolute;
-}
-
-.background div{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    white-space: pre-wrap;
-    font-size: 23px;
-}
-
-.container{
-    position: absolute;
-    pointer-events: none;
-    transform: translate(-50%,-50%);
-
-}
-
-.holding{
-    opacity: 0.5;
-}
-
-.displayArea button{
-    position: absolute;
-    opacity: 0.7;
-    background: lightgray;
-    transform: translate(-50%,-50%);
-    border: none;
-}
-
-.displayArea{
-    pointer-events: stroke;
-    overflow: hidden;
-}
-
-.textInput{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    background: rgba(0,0,0,0.25) ;
-
-    z-index: 20000;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-}
-
-.textInput * {
-    word-break: break-all;
-    width: 1050px;
-    text-align:center;
-    font-size: 75px;
-    z-index: 20001;
-    background: white;
-    opacity: 1;
-
-    border: none;
-    resize:none;
-    max-height: 550px;
-}
-
-.trash{
-    position: absolute;
-    right: 0;
-    padding: 40px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20%;
-    font-size: 25px;
-    font-family: 'Tahoma';
-    background: lightgrey;
-    color: white;
-    margin: 30px;
-}
-.trash:hover{
-    background: lightslategrey;
-}
+/*# sourceMappingURL=DisplayArea.css.map */

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ab9677d6-e577-489d-a547-b9bbb0488d32" name="Default Changelist" comment="Переписывание системы позиций, перемещение с зажатой мышью по картинке, слайдер размера, система смены разрешений починена, загрузка нескольких фото в новой системе налажена, убратие слайдера при клике на свободную область, распростронение кликов убрано">
+      <change afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/slices/displayItemsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/slices/displayItemsSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/index.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="2A2fCbMCv49fz8AtRv5Hv7b45oB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vladwizard\WebstormProjects\imageredactor\src\components" />
+      <recent name="C:\Users\Vladwizard\WebstormProjects\imageredactor\src\components\PreferencesArea" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab9677d6-e577-489d-a547-b9bbb0488d32" name="Default Changelist" comment="" />
+      <created>1654212473741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654212473741</updated>
+      <workItem from="1654212475110" duration="7191000" />
+      <workItem from="1654259330229" duration="3305000" />
+      <workItem from="1654267095289" duration="20860000" />
+      <workItem from="1654306087246" duration="37000" />
+      <workItem from="1654349589215" duration="5673000" />
+      <workItem from="1654358206051" duration="15118000" />
+      <workItem from="1654400661106" duration="9183000" />
+      <workItem from="1654451099222" duration="40655000" />
+      <workItem from="1654529637436" duration="33893000" />
+      <workItem from="1654578437335" duration="25230000" />
+      <workItem from="1654665299412" duration="329000" />
+      <workItem from="1654665643285" duration="1474000" />
+      <workItem from="1654667146840" duration="394000" />
+      <workItem from="1654667670197" duration="942000" />
+      <workItem from="1654669271299" duration="18798000" />
+      <workItem from="1654717269869" duration="2566000" />
+      <workItem from="1654726539047" duration="7211000" />
+      <workItem from="1654735604857" duration="165000" />
+      <workItem from="1654814138906" duration="936000" />
+      <workItem from="1654815412830" duration="1816000" />
+      <workItem from="1654819659565" duration="2331000" />
+      <workItem from="1654822113771" duration="326000" />
+      <workItem from="1654832737104" duration="2153000" />
+      <workItem from="1654873366068" duration="9000" />
+      <workItem from="1654911548114" duration="458000" />
+      <workItem from="1654914830445" duration="2034000" />
+      <workItem from="1654966652089" duration="7057000" />
+    </task>
+    <task id="LOCAL-00001" summary="Первая загрузка, изменене размера холста, вставка через ссылку и файлом, вставка нескольких изображений, перемещение при нажатии.">
+      <created>1654378124201</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654378124201</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Добавление кнопки перемещение и слайдера размер, безфункционала">
+      <created>1654452703060</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654452703060</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Групирование позиций приперемещении мыши">
+      <created>1654466793057</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654466793057</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Переписывание системы позиций, перемещение с зажатой мышью по картинке, слайдер размера, система смены разрешений починена, загрузка нескольких фото в новой системе налажена, убратие слайдера при клике на свободную область, распростронение кликов убрано">
+      <created>1654487777570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654487777570</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Изюавление от елемента контейнер">
+      <created>1654530805203</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654530805203</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Добавление кнопок размера">
+      <created>1654542837086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654542837086</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Настройка кнопок размера, загрузка множества обьектов, дороботано перемешение, ресайз страницы">
+      <created>1654549517592</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654549517592</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Добавление вставки текста, окна редактирования, ограничения размеров редактируемых елементов">
+      <created>1654636413274</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654636413274</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Добавление функций управления фоном, сохранение пропорций, загрузка изображений, удаление фона">
+      <created>1654644076520</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654644076520</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Добавление функций управления фоном, сохранение пропорций, загрузка изображений, удаление фона">
+      <created>1654644997227</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654644997227</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Цвет текста, начальный ввод текста">
+      <created>1654677036103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654677036103</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Добавление сохранениний и рендеринга сторонними библеотеками">
+      <created>1654683432897</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654683432897</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Вёрствка">
+      <created>1654688836255</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654688836255</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Фикс багов вёрстки">
+      <created>1654715340009</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654715340009</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Фикс бага загрузки">
+      <created>1654715960242</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654715960242</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ignore idea">
+      <created>1654717345620</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654717345620</updated>
+    </task>
+    <task id="LOCAL-00017" summary="formatting, remove trash from code, add tresh button for elements">
+      <created>1654735142649</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654735142649</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Non-changeability of the interface when scaling">
+      <created>1654916672107</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1654916672107</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Vladwizard/WebstormProjects/imageredactor/src/Redux/slices" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Первая загрузка, изменене размера холста, вставка через ссылку и файлом, вставка нескольких изображений, перемещение при нажатии." />
+    <MESSAGE value="Добавление кнопки перемещение и слайдера размер, безфункционала" />
+    <MESSAGE value="Групирование позиций приперемещении мыши" />
+    <MESSAGE value="Переписывание системы позиций, перемещение с зажатой мышью по картинке, слайдер размера, система смены разрешений починена, загрузка нескольких фото в новой системе налажена, убратие слайдера при клике на свободную область, распростронение кликов убрано" />
+    <MESSAGE value="Изюавление от елемента контейнер" />
+    <MESSAGE value="Добавление кнопок размера" />
+    <MESSAGE value="Настройка кнопок размера, загрузка множества обьектов, дороботано перемешение, ресайз страницы" />
+    <MESSAGE value="Добавление вставки текста, окна редактирования, ограничения размеров редкатируемых елементов" />
+    <MESSAGE value="Добавление вставки текста, окна редактирования, ограничения размеров редактируемых елементов" />
+    <MESSAGE value="Добавление функций управления фоном, сохранение пропорций, загрузка изображений, удаление фона" />
+    <MESSAGE value="Цвет текста, начальный ввод текста" />
+    <MESSAGE value="Добавление сохранениний и рендеринга сторонними библеотеками" />
+    <MESSAGE value="Вёрствка" />
+    <MESSAGE value="Фикс багов вёрстки" />
+    <MESSAGE value="Фикс бага загрузки" />
+    <MESSAGE value="ignore idea" />
+    <MESSAGE value="formatting, remove trash from code, add tresh button for elements" />
+    <MESSAGE value="Non-changeability of the interface when scaling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Non-changeability of the interface when scaling" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="663" y="292" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1654212800166">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="663" y="292" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654212800166" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1654735153458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654735153458" />
+    <state x="564" y="224" width="790" height="816" key="EditFileWatcherDialog" timestamp="1654971166178">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="564" y="224" width="790" height="816" key="EditFileWatcherDialog/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654971166178" />
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1654873372781">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654873372781" />
+    <state width="946" height="79" key="GridCell.Tab.0.bottom" timestamp="1654977391658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="946" height="79" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
+    <state width="946" height="79" key="GridCell.Tab.0.center" timestamp="1654977391658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="946" height="79" key="GridCell.Tab.0.center/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
+    <state width="946" height="79" key="GridCell.Tab.0.left" timestamp="1654977391658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="946" height="79" key="GridCell.Tab.0.left/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
+    <state width="946" height="79" key="GridCell.Tab.0.right" timestamp="1654977391658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="946" height="79" key="GridCell.Tab.0.right/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
+    <state x="351" y="78" key="SettingsEditor" timestamp="1654971465269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654971465269" />
+    <state x="452" y="183" key="Vcs.Push.Dialog.v2" timestamp="1654982091129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654982091129" />
+    <state x="736" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1654822346944">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654822346944" />
+    <state x="619" y="241" key="git4idea.merge.GitPullDialog" timestamp="1654916680031">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="619" y="241" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654916680031" />
+    <state x="714" y="398" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1654377956543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="398" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654377956543" />
+    <state x="532" y="237" key="run.anything.popup" timestamp="1654559367089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654559367089" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1654498692766">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654498692766" />
+  </component>
+</project>

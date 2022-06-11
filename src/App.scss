@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+
+  .preferencesArea {
+    height: 100vh;
+    width: 20%;
+    /*width: 30%;*/
+    /*max-width: 400px;*/
+    background: cornsilk;
+  }
+
+  .displayArea {
+    height: 100vh;
+    flex: 1;
+    background: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

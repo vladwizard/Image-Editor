@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import PreferencesArea from './components/PreferencesArea'
-import DisplayArea from './components/DisplayArea'
+import DisplayArea from './components/DisplayArea/DisplayArea'
 
 function App() {
   return (

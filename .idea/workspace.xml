@@ -11,24 +11,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab9677d6-e577-489d-a547-b9bbb0488d32" name="Default Changelist" comment="Переписывание системы позиций, перемещение с зажатой мышью по картинке, слайдер размера, система смены разрешений починена, загрузка нескольких фото в новой системе налажена, убратие слайдера при клике на свободную область, распростронение кликов убрано">
-      <change afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DisplayArea/compoments/SizingBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DisplayArea/compoments/textRedactor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImgBlock/ImgBlock.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImgBlock/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PaintArea/PaintArea.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PaintArea/PaintArea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/imageredactor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imageredactor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2022_18_53_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2022_18_53__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/slices/displayItemsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/slices/displayItemsSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DisplayArea/DisplayArea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DisplayArea/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PreferencesArea/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PreferencesArea/PreferencesArea.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,14 +66,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vladwizard\WebstormProjects\imageredactor\src\components\DisplayArea\compoments" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Vladwizard\WebstormProjects\imageredactor\src\components" />
       <recent name="C:\Users\Vladwizard\WebstormProjects\imageredactor\src\components\PreferencesArea" />
@@ -113,6 +136,12 @@
       <workItem from="1654911548114" duration="458000" />
       <workItem from="1654914830445" duration="2034000" />
       <workItem from="1654966652089" duration="7057000" />
+      <workItem from="1656286965616" duration="912000" />
+      <workItem from="1656289686383" duration="289000" />
+      <workItem from="1656293252605" duration="28461000" />
+      <workItem from="1656363742262" duration="479000" />
+      <workItem from="1656365681322" duration="867000" />
+      <workItem from="1656366935517" duration="8556000" />
     </task>
     <task id="LOCAL-00001" summary="Первая загрузка, изменене размера холста, вставка через ссылку и файлом, вставка нескольких изображений, перемещение при нажатии.">
       <created>1654378124201</created>
@@ -326,22 +355,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654873372781" />
-    <state width="946" height="79" key="GridCell.Tab.0.bottom" timestamp="1654977391658">
+    <state width="946" height="335" key="GridCell.Tab.0.bottom" timestamp="1656366581422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="946" height="79" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
-    <state width="946" height="79" key="GridCell.Tab.0.center" timestamp="1654977391658">
+    <state width="946" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1656366581422" />
+    <state width="946" height="335" key="GridCell.Tab.0.center" timestamp="1656366581421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="946" height="79" key="GridCell.Tab.0.center/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
-    <state width="946" height="79" key="GridCell.Tab.0.left" timestamp="1654977391658">
+    <state width="946" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1656366581421" />
+    <state width="946" height="335" key="GridCell.Tab.0.left" timestamp="1656366581421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="946" height="79" key="GridCell.Tab.0.left/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
-    <state width="946" height="79" key="GridCell.Tab.0.right" timestamp="1654977391658">
+    <state width="946" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1656366581421" />
+    <state width="946" height="335" key="GridCell.Tab.0.right" timestamp="1656366581422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="946" height="79" key="GridCell.Tab.0.right/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1654977391658" />
+    <state width="946" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/-1176.0.1176.624@0.0.1920.1040" timestamp="1656366581422" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1654971465269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

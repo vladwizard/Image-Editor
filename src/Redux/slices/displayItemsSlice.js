@@ -14,10 +14,7 @@ const textData = (color, width, height,id) => {
         width,
         height,
         id,
-        startWidth: width,
-        startHeight: height,
         str:'',
-
     })
 }
 
@@ -54,10 +51,9 @@ export const displayItemsSlice = createSlice({
 
         setText: (state, action) => {
 
-            let fs = 32;
             let color = action.payload;
 
-            state.text = textData( color, 0, fs * 2, state.id++);
+            state.text = textData( color, 200, 120, state.id++);
         },
     },
 })

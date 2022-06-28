@@ -9,9 +9,14 @@
   .background {
     background: black;
     transform: translate(-50%, -50%);
-    overflow: hidden;
+    overflow: visible;
 
-    div {
+    .translable {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    .text {
 
       display: flex;
       align-items: center;
@@ -21,10 +26,14 @@
       font-size: 32px;
     }
 
-    img {
-
-      pointer-events: all;
+    .image {
+      background-repeat: no-repeat;
+      background-size: contain;
     }
+    .image:active {
+      opacity: 0.7;
+    }
+
   }
 
 
@@ -32,9 +41,8 @@
     opacity: 0.5;
   }
 
-  button {
-
-    opacity: 0.7;
+  .borderBox > button {
+    opacity: 0.9;
     background: lightgray;
     transform: translate(-50%, -50%);
     border: none;

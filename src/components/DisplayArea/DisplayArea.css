@@ -8,9 +8,13 @@
 .displayArea .background {
   background: black;
   transform: translate(-50%, -50%);
-  overflow: hidden;
+  overflow: visible;
 }
-.displayArea .background div {
+.displayArea .background .translable {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.displayArea .background .text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,14 +22,18 @@
   white-space: pre-wrap;
   font-size: 32px;
 }
-.displayArea .background img {
-  pointer-events: all;
+.displayArea .background .image {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.displayArea .background .image:active {
+  opacity: 0.7;
 }
 .displayArea .holding {
   opacity: 0.5;
 }
-.displayArea button {
-  opacity: 0.7;
+.displayArea .borderBox > button {
+  opacity: 0.9;
   background: lightgray;
   transform: translate(-50%, -50%);
   border: none;
